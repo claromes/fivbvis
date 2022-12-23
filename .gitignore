@@ -1,5 +1,6 @@
 .pytest_cache/
 fivbvis/__pycache__/
-fivbvis/example.py
 tests/__pycache__/
 tests/vcr_cassettes/
+example.py
+request.txt
