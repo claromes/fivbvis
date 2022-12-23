@@ -37,7 +37,7 @@ PyPI soon.
 }
 ```
 
-## API Documentation (WIP)
+## Documentation (WIP)
 
 ### Article Object
 ----
