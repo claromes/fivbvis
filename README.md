@@ -2,19 +2,21 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/openvb/fivbvis?include_prereleases)
 ![GitHub](https://img.shields.io/github/license/openvb/fivbvis)
 
-Python library to easily integrate with FIVB VIS Web Service public data.
+Python client library to easily integrate with FIVB VIS Web Service public data.
 
 Responses are formatted using JSON.
 
-## Install
+## Installation
+
+PyPI soon.
+
+## Development
 
 $ `git clone git@github.com:openvb/fivbvis.git`
 
 $ `cd fivbvis`
 
 $ `pip install -r requirements.txt`
-
-PyPI soon.
 
 ## Usage
 ```python
@@ -87,15 +89,25 @@ Get a volleyball match.
 - Parameters:
     - `no` (int) - The number of the match.
 
+- Example:
+
+    `match(9211)`
+
 - Return type:	dict
 
->match_list(no_tournament, fields)
+>list(no_tournament, fields, filter)
 
 Get a list of volleyball matches.
 
 - Parameters:
     - `no_tournament` (int) - The number of the tournament.
     - `fields` (str) - All the fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+    - `filter` (str, (optional)) - All the filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
+
+- Example:
+
+    `list(979, 'City Hall MatchPointsA MatchPointsB', 'FirstDate="2017-07-01" LastDate="2017-07-31"')`
+
 
 - Return type:	dict
 

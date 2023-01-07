@@ -12,8 +12,8 @@ class VolleyMatch():
 
         return response.json()
 
-    def list(self, no_tournament, fields):
-        url = self.base_url + "<Request Type='GetVolleyMatchList' NoTournament='{}' Fields='{}'/>".format(no_tournament, fields)
+    def list(self, no_tournament, fields, filter=''):
+        url = self.base_url + "<Request Type='GetVolleyMatchList' Fields='{}'><Filter {} NoTournament='{}' /></Request>".format(fields, filter, no_tournament)
 
         response = requests.get(url, headers=self.headers)
 
