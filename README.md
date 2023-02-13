@@ -10,13 +10,9 @@ Responses are formatted using JSON.
 
 PyPI soon.
 
-## Development
+## Docs
 
-$ `git clone git@github.com:openvb/fivbvis.git`
-
-$ `cd fivbvis`
-
-$ `pip install -r requirements.txt`
+[Objects documentation](docs/DOCS.md)
 
 ## Usage
 ```python
@@ -38,96 +34,54 @@ $ `pip install -r requirements.txt`
    }
 }
 ```
+## Development
 
-## Documentation (WIP)
+$ `git clone git@github.com:openvb/fivbvis.git`
 
-### Article Object
-----
+$ `cd fivbvis`
 
-### Beach Object
-----
+$ `pip install -r requirements.txt`
 
-### Confederation Object
-----
+## Requests
 
-### Federation Object
-----
+- [x] Article Object
 
-### Image Object
-----
+- [ ] Beach Object
 
-### Match Object
-----
+- [ ] Confederation Object
 
-### Phase Object
-----
+- [ ] Federation Object
 
-### Player Object
-----
+- [ ] Image Object
 
-### Round Object
-----
+- [ ] Match Object
 
-### Tournament Object
-----
+- [ ] Phase Object
 
-### VolleyClub Object
-----
+- [ ] Player Object
 
-### VolleyLive Object
-----
+- [ ] Round Object
 
-### VolleyMatch Object
-----
+- [ ] Tournament Object
 
-`class` fivbvis.VolleyMatch()
+- [ ] VolleyClub Object
 
->match(no)
+- [ ] VolleyLive Object
 
-Get a volleyball match.
+- [x] VolleyMatch Object
 
-- Parameters:
-    - `no` (int) - The number of the match.
+- [ ] VolleyPlayer Object
 
-- Example:
+- [ ] VolleyPool Object
 
-    `match(9211)`
+- [ ] VolleyRankingDefinition Object
 
-- Return type:	dict
+- [ ] VolleyStatistic Object
 
->list(no_tournament, fields, filter)
+- [ ] VolleyTeam Object
 
-Get a list of volleyball matches.
+- [ ] VolleyTournament Object
 
-- Parameters:
-    - `no_tournament` (int) - The number of the tournament.
-    - `fields` (str) - All the fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
-    - `filter` (str, (optional)) - All the filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
+- [ ] VolleyTransfer Object
 
-- Example:
-
-    `list(979, 'City Hall MatchPointsA MatchPointsB', 'FirstDate="2017-07-01" LastDate="2017-07-31"')`
-
-
-- Return type:	dict
-
-### VolleyPlayer Object
-----
-
-### VolleyPool Object
-----
-
-### VolleyRankingDefinition Object
-----
-
-### VolleyStatistic Object
-----
-
-### VolleyTeam Object
-----
-
-### VolleyTournament Object
-----
-
-### VolleyTransfer Object
-----
+[VIS Web Service Requests full list](https://www.fivb.org/VisSDK/VisWebService/RequestList.html)
