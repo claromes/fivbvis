@@ -3,6 +3,22 @@
 ## Article Object
 ----
 
+`class` fivbvis.Article()
+
+>get(no, fields)
+
+Get a article.
+
+- Parameters:
+    - `no` (int) - The number of the match.
+    - `fields` (str) - All the fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+
+- Request example:
+
+    `get(28639, 'No')`
+
+- Return type:	dict
+
 ## Beach Object
 ----
 
@@ -66,7 +82,6 @@ Get a list of volleyball matches.
 - Request example:
 
     `list(979, 'City Hall MatchPointsA MatchPointsB', 'FirstDate="2017-07-01" LastDate="2017-07-31"')`
-
 
 - Return type:	dict
 
