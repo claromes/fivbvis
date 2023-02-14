@@ -5,13 +5,13 @@
 
 `class` fivbvis.Article()
 
->get(no, fields)
+>get(no, fields='')
 
 Get a article.
 
 - Parameters:
     - `no` (int) - The number of the match.
-    - `fields` (str) - All the fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+    - `fields` (str) - All the fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
 
 - Request example:
 
@@ -70,7 +70,7 @@ Get a volleyball match.
 
 - Return type:	dict
 
->list(no_tournament, fields, filter)
+>list(no_tournament, fields='', filter='')
 
 Get a list of volleyball matches.
 
