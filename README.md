@@ -1,6 +1,6 @@
 # FIVB VIS Python Client
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/openvb/fivbvis?include_prereleases)
-![GitHub](https://img.shields.io/github/license/openvb/fivbvis)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/claromes/fivbvis?include_prereleases)
+![GitHub](https://img.shields.io/github/license/claromes/fivbvis)
 
 Python client library to easily integrate with FIVB VIS Web Service public data.
 
@@ -36,7 +36,7 @@ PyPI soon.
 ```
 ## Development
 
-$ `git clone git@github.com:openvb/fivbvis.git`
+$ `git clone git@github.com:claromes/fivbvis.git`
 
 $ `cd fivbvis`
 
