@@ -1,7 +1,15 @@
+# test
 .pytest_cache/
 fivbvis/__pycache__/
 tests/__pycache__/
 tests/vcr_cassettes/
 example.py
 request.txt
+
+# build
+/dist/
+/build/
+/*.egg-info/
+
+# env
 /venv

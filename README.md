@@ -8,17 +8,19 @@ Responses are formatted using JSON.
 
 ## Installation
 
-PyPI soon.
-
-## Docs
-
-[Objects documentation](docs/DOCS.md)
+```shell
+pip3 install fivbvis
+```
 
 ## Usage
 ```python
->>> from fivbvis import VolleyMatch
->>> vm = VolleyMatch()
->>> print(vm.match(9211))
+from fivbvis import VolleyMatch
+
+vb = VolleyMatch()
+
+print(vb.match(9211))
+```
+```json
 {
    "data":{
         "assistantScorerCountryCode":"None",
@@ -34,13 +36,18 @@ PyPI soon.
    }
 }
 ```
+
+## Docs
+
+[Objects documentation](docs/DOCS.md)
+
 ## Development
 
 $ `git clone git@github.com:claromes/fivbvis.git`
 
 $ `cd fivbvis`
 
-$ `pip install -r requirements.txt`
+$ `pip3 install -r dev-requirements.txt`
 
 ## Requests
 
