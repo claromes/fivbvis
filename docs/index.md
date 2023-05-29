@@ -1,15 +1,22 @@
 # FIVB VIS Python Client
+
 ![PyPI](https://img.shields.io/pypi/v/fivbvis)
 
 Python client library to easily integrate with [FIVB VIS Web Service](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html) public data.
 
 Responses are formatted using JSON.
 
+<br>
+
+# Docs
+
 ## Installation
 
 ```shell
 pip3 install fivbvis
 ```
+
+<br>
 
 ## Usage
 ```python
@@ -142,17 +149,147 @@ print(vm.match(9211))
 }
 ```
 
-## [Documentation](https://claromes.github.io/fivbvis)
+<br>
 
-## Requests Available
+## Requests
 
-- Article
-- VolleyMatch
+### Article
+----
 
-## Development
+`class` fivbvis.Article()
 
-$ `git clone git@github.com:claromes/fivbvis.git`
+>get(no, fields='')
 
-$ `cd fivbvis`
+Get a article.
 
-$ `pip3 install -r dev-requirements.txt`
+- Parameters:
+    - `no` (int) - The number of the match.
+    - `fields` (str) - All the fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+
+- Request example:
+
+    ```python
+    from fivbvis import Article
+
+    a = Article()
+    print(a.get(28639, 'No source isVideoLive'))
+    ```
+
+- Return type:	dict
+
+>list(fields, filter='', tags='')
+
+Get a list of article.
+
+- Parameters:
+    - `fields` (str) - All the fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+    - `filter` (str) - Where the articles were published. Must be space-separated. [(Filter for an article)](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
+    - `tags` (str) - Tags in the article data. Must be space-separated. [(Tags Filtering examples)](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
+
+- Request example:
+
+    ```python
+    from fivbvis import Article
+
+    a = Article()
+    print(a.list('No PhotoUrl PublishOnFivb ShareUrl', 'Home', 'volley-tournament:979'))
+    ```
+
+- Return type:	`dict`
+
+<br>
+
+### Beach
+----
+
+### Confederation
+----
+
+### Federation
+----
+
+### Image
+----
+
+### Match
+----
+
+### Phase
+----
+
+### Player
+----
+
+### Round
+----
+
+### Tournament
+----
+
+### VolleyClub
+----
+
+### VolleyLive
+----
+
+<br>
+
+### VolleyMatch
+----
+
+`class` fivbvis.VolleyMatch()
+
+>match(no)
+
+Get a volleyball match.
+
+- Parameters:
+    - `no` (int) - The number of the match.
+
+- Request example:
+
+    `match(9211)`
+
+- Return type:	dict
+
+>list(no_tournament, fields='', filter='')
+
+Get a list of volleyball matches.
+
+- Parameters:
+    - `no_tournament` (int) - The number of the tournament.
+    - `fields` (str) - All the fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+    - `filter` (str, (optional)) - All the filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
+
+- Request example:
+
+    `list(979, 'City Hall MatchPointsA MatchPointsB', 'FirstDate="2017-07-01" LastDate="2017-07-31"')`
+
+- Return type:	dict
+
+<br>
+
+### VolleyPlayer
+----
+
+### VolleyPool
+----
+
+### VolleyRankingDefinition
+----
+
+### VolleyStatistic
+----
+
+### VolleyTeam
+----
+
+### VolleyTournament
+----
+
+### VolleyTransfer
+----
+
+<br>
+
+[VIS Web Service Requests full list](https://www.fivb.org/VisSDK/VisWebService/RequestList.html)
