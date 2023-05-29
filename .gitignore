@@ -3,6 +3,8 @@
 fivbvis/__pycache__/
 tests/__pycache__/
 tests/vcr_cassettes/
+tests/tests/
+tests/.coverage
 example.py
 request.txt
 

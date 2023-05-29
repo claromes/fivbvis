@@ -15,12 +15,15 @@ setup(
     name='fivbvis',
     version=version,
     author='claromes',
-    license='GPLv3',
     description='FIVB VIS Web Service Python Client',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords='api-wrapper fivbvis fivb volleyball beachvolleyball',
     url='https://github.com/claromes/fivbvis',
+    project_urls={
+        'Documentation': 'https://claromes.github.io/fivbvis/',
+        'Issue Tracker': 'https://github.com/claromes/fivbvis/issues',
+    },
     packages=find_packages(exclude=['docs', 'tests*']),
     classifiers=[
         'Development Status :: 3 - Alpha',
