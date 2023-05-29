@@ -26,7 +26,7 @@ setup(
     },
     packages=find_packages(exclude=['docs', 'tests*']),
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Education',
         'Intended Audience :: Developers',

@@ -1,6 +1,6 @@
 # FIVB VIS Python Client
 
-![PyPI](https://img.shields.io/pypi/v/fivbvis) ![GitHub](https://img.shields.io/github/license/claromes/fivbvis)
+[![PyPI](https://img.shields.io/pypi/v/fivbvis)](https://pypi.org/project/fivbvis/) [![License](https://img.shields.io/github/license/claromes/fivbvis)](https://github.com/claromes/fivbvis/blob/main/LICENSE.md) [![Star](https://img.shields.io/github/stars/claromes/fivbvis?style=social)](https://github.com/claromes/fivbvis)
 
 Python client library to easily integrate with [FIVB VIS Web Service](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html) public data.
 

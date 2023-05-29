@@ -1,5 +1,6 @@
 # FIVB VIS Python Client
-![PyPI](https://img.shields.io/pypi/v/fivbvis)
+
+[![PyPI](https://img.shields.io/pypi/v/fivbvis)](https://pypi.org/project/fivbvis/)
 
 Python client library to easily integrate with [FIVB VIS Web Service](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html) public data.
 
