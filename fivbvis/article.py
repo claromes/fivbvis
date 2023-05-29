@@ -11,3 +11,10 @@ class Article():
         response = requests.get(url, headers=self.headers)
 
         return response.json()
+
+    def list(self, fields, filter='', tags=''):
+        url = self.base_url + "<Request Type='GetArticleList' Fields='{}'><Filter>'{}'<Tags>{}</Tags></Filter></Request>".format(fields, filter, tags)
+
+        response = requests.get(url, headers=self.headers)
+
+        return response.json()
