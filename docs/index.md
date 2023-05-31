@@ -6,9 +6,15 @@ Python client library to easily integrate with [FIVB VIS Web Service](https://ww
 
 Responses are formatted using JSON.
 
+**This client is not affiliated with the Fédération Internationale de Volleyball (FIVB).**
+
 <br>
 
 # Docs
+
+## Requirements
+
+- Python 3.8+
 
 ## Installation
 
@@ -293,3 +299,7 @@ Get a list of volleyball matches.
 <br>
 
 [VIS Web Service Requests full list](https://www.fivb.org/VisSDK/VisWebService/RequestList.html)
+
+## Author
+
+[claromes](https://claromes.gitlab.io/)
