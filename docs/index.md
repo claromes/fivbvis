@@ -22,8 +22,6 @@ Responses are formatted using JSON.
 pip3 install fivbvis
 ```
 
-<br>
-
 ## Usage
 ```python
 from fivbvis import VolleyMatch
@@ -155,8 +153,6 @@ print(vm.match(9211))
 }
 ```
 
-<br>
-
 ## Requests
 
 ### Article
@@ -238,8 +234,6 @@ Get a list of article.
 ### VolleyLive
 ----
 
-<br>
-
 ### VolleyMatch
 ----
 
@@ -295,8 +289,6 @@ Get a list of volleyball matches.
 
 ### VolleyTransfer
 ----
-
-<br>
 
 [VIS Web Service Requests full list](https://www.fivb.org/VisSDK/VisWebService/RequestList.html)
 
