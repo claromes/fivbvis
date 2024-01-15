@@ -2,9 +2,9 @@
 
 [![PyPI](https://img.shields.io/pypi/v/fivbvis)](https://pypi.org/project/fivbvis/)
 
-Python client library to easily integrate with [FIVB VIS Web Service](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html) public data with JSON responses
+Python client library for easy integration with [FIVB VIS Web Service](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html) public data, providing XML and JSON responses.
 
-**This client is not affiliated with the Fédération Internationale de Volleyball (FIVB)**
+**This client is not affiliated with the Fédération Internationale de Volleyball (FIVB).**
 
 ## Requirements
 
@@ -23,7 +23,7 @@ Basic example:
 from fivbvis import VolleyMatch
 
 vm = VolleyMatch()
-print(vm.match(9211))
+print(vm.match(9211, response_format="json"))
 ```
 JSON return:
 
@@ -36,6 +36,7 @@ JSON return:
       "beginDateTimeUtc":"2018-10-07T04:25:00Z",
       "buyTicketsUrl":"",
       "city":"Nagoya",
+      "countryCode":"JP",
       ...
    }
 }

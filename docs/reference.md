@@ -4,7 +4,7 @@
 
 >`class` fivbvis.Article()
 
-### get(no, fields)
+### get(no, fields, response_format)
 
 Get an article.
 
@@ -13,6 +13,7 @@ If the `fields` parameter is not passed, the following fields will be applied: `
 - Parameters:
     - `no` (int, required) - The number of the match.
     - `fields` (str, optional) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
 
 - Example:
 
@@ -23,9 +24,7 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     print(a.get(no=69213, fields='no source isVideoLive'))
     ```
 
-- Return type: `dict`
-
-### list(fields, filters, tags)
+### list(fields, filters, tags, response_format)
 
 Get a list of article.
 
@@ -35,6 +34,7 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     - `fields` (str, required) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
     - `filters` (str, optional) - Where the articles were published. Must be space-separated. [(Filter for an article)](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
     - `tags` (str, optional) - Tags in the article data. Must be space-separated. [(Tags Filtering examples)](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
+    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
 
 - Example:
 
@@ -44,8 +44,6 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     a = Article()
     print(a.list(filters='Home', tags='volley-tournament:979'))
     ```
-
-- Return type: `dict`
 
 <br>
 
@@ -75,12 +73,13 @@ If the `fields` parameter is not passed, the following fields will be applied: `
 
 >`class` fivbvis.VolleyMatch()
 
-### match(no)
+### match(no, response_format)
 
 Get a volleyball match.
 
 - Parameters:
     - `no` (int, required) - The number of the match.
+    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
 
 - Example:
 
@@ -91,9 +90,7 @@ Get a volleyball match.
     print(vm.match(9211))
     ```
 
-- Return type: `dict`
-
-### list(no_tournament, fields, filters)
+### list(no_tournament, fields, filters, response_format)
 
 Get a list of volleyball matches.
 
@@ -105,6 +102,7 @@ Requesting all parameters may result in a 404 error.
     - `no_tournament` (int, required) - The number of the tournament.
     - `fields` (str, optional) - Fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
     - `filters` (str, optional) - Filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
+    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
 
 - Example:
 
@@ -114,8 +112,6 @@ Requesting all parameters may result in a 404 error.
     vm = VolleyMatch()
     print(vm.list(no_tournament=979, filters='FirstDate="2017-7-5" LastDate="2017-7-5"'))
     ```
-
-- Return type: `dict`
 
 <br>
 

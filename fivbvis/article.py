@@ -4,19 +4,34 @@ FIELDS = 'DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT Las
 
 class Article():
     def __init__(self):
-        self.headers = {'Accept': 'application/json'}
         self.base_url = "https://www.fivb.org/Vis2009/XmlRequest.asmx?Request="
 
-    def get(self, no, fields=FIELDS):
+    def get(self, no, fields=FIELDS, response_format='xml'):
         url = self.base_url + f"<Request Type='GetArticle' No='{no}' Fields='{fields}'/>"
 
-        response = requests.get(url, headers=self.headers)
+        if response_format != 'json' and response_format != 'xml':
+            raise ValueError(f'{response_format}: The provided value is not accepted.')
+        
+        headers = {'Accept': f'application/{response_format}'}
 
-        return response.json()
+        response = requests.get(url, headers=headers)
 
-    def list(self, fields=FIELDS, filters='', tags=''):
+        if response_format == 'xml':
+            return response.text
+        elif response_format == 'json':
+            return response.json()
+
+    def list(self, fields=FIELDS, filters='', tags='', response_format='xml'):
         url = self.base_url + f"<Request Type='GetArticleList' Fields='{fields}'><Filter>'{filters}'<Tags>{tags}</Tags></Filter></Request>"
 
-        response = requests.get(url, headers=self.headers)
+        if response_format != 'json' and response_format != 'xml':
+            raise ValueError(f'{response_format}: The provided value is not accepted.')
 
-        return response.json()
+        headers = {'Accept': f'application/{response_format}'}
+
+        response = requests.get(url, headers=headers)
+
+        if response_format == 'xml':
+            return response.text
+        elif response_format == 'json':
+            return response.json()
