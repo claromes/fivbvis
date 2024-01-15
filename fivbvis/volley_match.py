@@ -6,7 +6,7 @@ class VolleyMatch():
         self.base_url = "https://www.fivb.org/Vis2009/XmlRequest.asmx?Request="
 
     def match(self, no):
-        url = self.base_url + "<Request Type='GetVolleyMatch' No='{}' />".format(no)
+        url = self.base_url + f"<Request Type='GetVolleyMatch' No='{no}' />"
 
         response = requests.get(url, headers=self.headers)
 
@@ -16,7 +16,7 @@ class VolleyMatch():
             no_tournament,
             fields='City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName',
             filters=''):
-        url = self.base_url + "<Request Type='GetVolleyMatchList' Fields='{}'><Filter {} NoTournament='{}' /></Request>".format(fields, filters, no_tournament)
+        url = self.base_url + f"<Request Type='GetVolleyMatchList' Fields='{fields}'><Filter {filters} NoTournament='{no_tournament}' /></Request>"
 
         response = requests.get(url, headers=self.headers)
 

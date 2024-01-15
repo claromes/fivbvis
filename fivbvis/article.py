@@ -8,14 +8,14 @@ class Article():
         self.base_url = "https://www.fivb.org/Vis2009/XmlRequest.asmx?Request="
 
     def get(self, no, fields=FIELDS):
-        url = self.base_url + "<Request Type='GetArticle' No='{}' Fields='{}'/>".format(no, fields)
+        url = self.base_url + f"<Request Type='GetArticle' No='{no}' Fields='{fields}'/>"
 
         response = requests.get(url, headers=self.headers)
 
         return response.json()
 
     def list(self, fields=FIELDS, filters='', tags=''):
-        url = self.base_url + "<Request Type='GetArticleList' Fields='{}'><Filter>'{}'<Tags>{}</Tags></Filter></Request>".format(fields, filters, tags)
+        url = self.base_url + f"<Request Type='GetArticleList' Fields='{fields}'><Filter>'{filters}'<Tags>{tags}</Tags></Filter></Request>"
 
         response = requests.get(url, headers=self.headers)
 
