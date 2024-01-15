@@ -20,12 +20,12 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     from fivbvis import Article
 
     a = Article()
-    print(a.get(69213, 'no source isVideoLive'))
+    print(a.get(no=69213, fields='no source isVideoLive'))
     ```
 
 - Return type: `dict`
 
-### list(fields, filter, tags)
+### list(fields, filters, tags)
 
 Get a list of article.
 
@@ -33,7 +33,7 @@ If the `fields` parameter is not passed, the following fields will be applied: `
 
 - Parameters:
     - `fields` (str, required) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
-    - `filter` (str, optional) - Where the articles were published. Must be space-separated. [(Filter for an article)](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
+    - `filters` (str, optional) - Where the articles were published. Must be space-separated. [(Filter for an article)](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
     - `tags` (str, optional) - Tags in the article data. Must be space-separated. [(Tags Filtering examples)](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
 
 - Example:
@@ -42,7 +42,7 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     from fivbvis import Article
 
     a = Article()
-    print(a.list('No PhotoUrl PublishOnFivb ShareUrl', 'Home', 'volley-tournament:979'))
+    print(a.list(filters='Home', tags='volley-tournament:979'))
     ```
 
 - Return type: `dict`
@@ -93,7 +93,7 @@ Get a volleyball match.
 
 - Return type: `dict`
 
-### list(no_tournament, fields, filter)
+### list(no_tournament, fields, filters)
 
 Get a list of volleyball matches.
 
@@ -104,7 +104,7 @@ Requesting all parameters may result in a 404 error.
 - Parameters:
     - `no_tournament` (int, required) - The number of the tournament.
     - `fields` (str, optional) - Fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
-    - `filter` (str, optional) - Filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
+    - `filters` (str, optional) - Filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
 
 - Example:
 
@@ -112,7 +112,7 @@ Requesting all parameters may result in a 404 error.
     from fivbvis import VolleyMatch
 
     vm = VolleyMatch()
-    print(vm.list(979, filter='FirstDate="2017-7-5" LastDate="2017-7-5"'))
+    print(vm.list(no_tournament=979, filters='FirstDate="2017-7-5" LastDate="2017-7-5"'))
     ```
 
 - Return type: `dict`

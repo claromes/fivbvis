@@ -14,8 +14,8 @@ class Article():
 
         return response.json()
 
-    def list(self, fields=FIELDS, filter='', tags=''):
-        url = self.base_url + "<Request Type='GetArticleList' Fields='{}'><Filter>'{}'<Tags>{}</Tags></Filter></Request>".format(fields, filter, tags)
+    def list(self, fields=FIELDS, filters='', tags=''):
+        url = self.base_url + "<Request Type='GetArticleList' Fields='{}'><Filter>'{}'<Tags>{}</Tags></Filter></Request>".format(fields, filters, tags)
 
         response = requests.get(url, headers=self.headers)
 

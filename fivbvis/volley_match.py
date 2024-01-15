@@ -15,8 +15,8 @@ class VolleyMatch():
     def list(self,
             no_tournament,
             fields='City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName',
-            filter=''):
-        url = self.base_url + "<Request Type='GetVolleyMatchList' Fields='{}'><Filter {} NoTournament='{}' /></Request>".format(fields, filter, no_tournament)
+            filters=''):
+        url = self.base_url + "<Request Type='GetVolleyMatchList' Fields='{}'><Filter {} NoTournament='{}' /></Request>".format(fields, filters, no_tournament)
 
         response = requests.get(url, headers=self.headers)
 
