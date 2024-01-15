@@ -4,13 +4,13 @@
 
 >`class` fivbvis.Article()
 
-### get(no, fields=None)
+### get(no, fields="")
 
 Get an article.
 
 - Parameters:
     - `no` (int, required) - The number of the match.
-    - `fields` (str, optional) - All the fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+    - `fields` (str, optional) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
 
 - Example:
 
@@ -23,12 +23,12 @@ Get an article.
 
 - Return type: `dict`
 
-### list(fields, filter=None, tags=None)
+### list(fields, filter="", tags="")
 
 Get a list of article.
 
 - Parameters:
-    - `fields` (str, required) - All the fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+    - `fields` (str, required) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
     - `filter` (str, optional) - Where the articles were published. Must be space-separated. [(Filter for an article)](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
     - `tags` (str, optional) - Tags in the article data. Must be space-separated. [(Tags Filtering examples)](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
 
@@ -38,7 +38,7 @@ Get a list of article.
     from fivbvis import Article
 
     a = Article()
-    print(a.list('no photoUrl publishOnFivb shareUrl', 'home', 'volley-tournament:979'))
+    print(a.list('No PhotoUrl PublishOnFivb ShareUrl', 'Home', 'volley-tournament:979'))
     ```
 
 - Return type: `dict`
@@ -89,14 +89,18 @@ Get a volleyball match.
 
 - Return type: `dict`
 
-### list(no_tournament, fields=None, filter=None)
+### list(no_tournament, fields="City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName", filter="")
 
 Get a list of volleyball matches.
 
+If the `fields` parameter is not passed, the following fields will be applied: `city, countryName, dateTimeLocal, durationTotal, hall, matchPointsA, matchPointsB, matchResultText, no, noTournament, season, teamAName, teamBName`.
+
+Requesting all parameters may result in a 404 error.
+
 - Parameters:
     - `no_tournament` (int, required) - The number of the tournament.
-    - `fields` (str, optional) - All the fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
-    - `filter` (str, optional) - All the filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
+    - `fields` (str, optional) - Fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+    - `filter` (str, optional) - Filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
 
 - Example:
 
@@ -104,7 +108,7 @@ Get a list of volleyball matches.
     from fivbvis import VolleyMatch
 
     vm = VolleyMatch()
-    print(vm.list(979, 'city hall matchPointsA matchPointsB', 'firstDate="2017-07-01" lastDate="2017-07-31"'))
+    print(vm.list(979, filter='FirstDate="2017-7-5" LastDate="2017-7-5"'))
     ```
 
 - Return type: `dict`
