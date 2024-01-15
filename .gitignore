@@ -14,4 +14,4 @@ request.txt
 /*.egg-info/
 
 # env
-/venv
+.venv
