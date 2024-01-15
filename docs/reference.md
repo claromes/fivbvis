@@ -4,9 +4,11 @@
 
 >`class` fivbvis.Article()
 
-### get(no, fields="")
+### get(no, fields)
 
 Get an article.
+
+If the `fields` parameter is not passed, the following fields will be applied: `DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT LastChangeUser LastChangeUsername No PhotoUrl PublishOnBeach PublishOnDevelopment PublishOnFivb PublishOnHeadlines PublishOnHome PublishOnMedical PublishOnMsdp PublishOnPresident PublishOnRefereeingRules PublishOnSnow PublishOnTechnicalCoach PublishOnTournament PublishOnTwitter PublishOnVolley PublishOnVolleyballWorld PublishOnWorldVolleyNews ShareUrl Source Url ValidFrom ValidTo DateTime Version VideoUri`.
 
 - Parameters:
     - `no` (int, required) - The number of the match.
@@ -23,9 +25,11 @@ Get an article.
 
 - Return type: `dict`
 
-### list(fields, filter="", tags="")
+### list(fields, filter, tags)
 
 Get a list of article.
+
+If the `fields` parameter is not passed, the following fields will be applied: `DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT LastChangeUser LastChangeUsername No PhotoUrl PublishOnBeach PublishOnDevelopment PublishOnFivb PublishOnHeadlines PublishOnHome PublishOnMedical PublishOnMsdp PublishOnPresident PublishOnRefereeingRules PublishOnSnow PublishOnTechnicalCoach PublishOnTournament PublishOnTwitter PublishOnVolley PublishOnVolleyballWorld PublishOnWorldVolleyNews ShareUrl Source Url ValidFrom ValidTo DateTime Version VideoUri`.
 
 - Parameters:
     - `fields` (str, required) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
@@ -89,11 +93,11 @@ Get a volleyball match.
 
 - Return type: `dict`
 
-### list(no_tournament, fields="City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName", filter="")
+### list(no_tournament, fields, filter)
 
 Get a list of volleyball matches.
 
-If the `fields` parameter is not passed, the following fields will be applied: `city, countryName, dateTimeLocal, durationTotal, hall, matchPointsA, matchPointsB, matchResultText, no, noTournament, season, teamAName, teamBName`.
+If the `fields` parameter is not passed, the following fields will be applied: `city countryName dateTimeLocal durationTotal hall matchPointsA matchPointsB matchResultText no noTournament season teamAName teamBName`.
 
 Requesting all parameters may result in a 404 error.
 
