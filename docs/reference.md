@@ -4,7 +4,7 @@
 
 >`class` fivbvis.Article()
 
-### get(no, fields, response_format)
+### getArticle(no, fields, response_format)
 
 Get an article.
 
@@ -21,10 +21,10 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     from fivbvis import Article
 
     a = Article()
-    print(a.get(no=69213, fields='no source isVideoLive'))
+    print(a.getArticle(no=69213, fields='no source isVideoLive'))
     ```
 
-### list(fields, filters, tags, response_format)
+### getArticleList(fields, filters, tags, response_format)
 
 Get a list of article.
 
@@ -42,7 +42,7 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     from fivbvis import Article
 
     a = Article()
-    print(a.list(filters='Home', tags='volley-tournament:979'))
+    print(a.getArticleList(filters='Home', tags='volley-tournament:979'))
     ```
 
 <br>
@@ -73,7 +73,7 @@ If the `fields` parameter is not passed, the following fields will be applied: `
 
 >`class` fivbvis.VolleyMatch()
 
-### match(no, response_format)
+### getMatch(no, response_format)
 
 Get a volleyball match.
 
@@ -87,10 +87,10 @@ Get a volleyball match.
     from fivbvis import VolleyMatch
 
     vm = VolleyMatch()
-    print(vm.match(9211))
+    print(vm.getMatch(9211))
     ```
 
-### list(no_tournament, fields, filters, response_format)
+### getMatchList(no_tournament, fields, filters, response_format)
 
 Get a list of volleyball matches.
 
@@ -110,7 +110,7 @@ Requesting all parameters may result in a 404 error.
     from fivbvis import VolleyMatch
 
     vm = VolleyMatch()
-    print(vm.list(no_tournament=979, filters='FirstDate="2017-7-5" LastDate="2017-7-5"'))
+    print(vm.getMatchList(no_tournament=979, filters='FirstDate="2017-7-5" LastDate="2017-7-5"'))
     ```
 
 <br>

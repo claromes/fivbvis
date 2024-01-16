@@ -23,7 +23,7 @@ Basic example:
 from fivbvis import VolleyMatch
 
 vm = VolleyMatch()
-print(vm.match(9211, response_format="json"))
+print(vm.getMatch(9211, response_format="json"))
 ```
 JSON return:
 
