@@ -24,7 +24,7 @@ setup(
         'Documentation': 'https://github.com/claromes/fivbvis/docs/reference.md',
         'Issue Tracker': 'https://github.com/claromes/fivbvis/issues',
     },
-    packages=find_packages(exclude=['docs', 'tests*']),
+    packages=find_packages(exclude=['docs']),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
