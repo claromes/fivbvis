@@ -14,17 +14,17 @@ with open('fivbvis/version.py', 'r', encoding='utf-8') as f:
 setup(
     name='fivbvis',
     version=version,
-    author='claromes',
+    author='Claromes',
     description='FIVB VIS Web Service Python Client',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='api-wrapper fivbvis fivb volleyball beachvolleyball',
+    keywords='fivbvis fivb volleyball beachvolleyball sports',
     url='https://github.com/claromes/fivbvis',
     project_urls={
-        'Documentation': 'https://claromes.github.io/fivbvis/',
+        'Documentation': 'https://github.com/claromes/fivbvis/docs/reference.md',
         'Issue Tracker': 'https://github.com/claromes/fivbvis/issues',
     },
-    packages=find_packages(exclude=['docs', 'tests*']),
+    packages=find_packages(exclude=['docs']),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
