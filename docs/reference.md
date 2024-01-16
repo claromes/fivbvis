@@ -2,17 +2,18 @@
 
 ## Article
 
->`class` fivbvis.Article()
+`class` Article()
 
-### getArticle(no, fields, response_format)
+> ### getArticle(no, fields, response_format)
 
 Get an article.
 
-If the `fields` parameter is not passed, the following fields will be applied: `DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT LastChangeUser LastChangeUsername No PhotoUrl PublishOnBeach PublishOnDevelopment PublishOnFivb PublishOnHeadlines PublishOnHome PublishOnMedical PublishOnMsdp PublishOnPresident PublishOnRefereeingRules PublishOnSnow PublishOnTechnicalCoach PublishOnTournament PublishOnTwitter PublishOnVolley PublishOnVolleyballWorld PublishOnWorldVolleyNews ShareUrl Source Url ValidFrom ValidTo DateTime Version VideoUri`.
-
 - Parameters:
-    - `no` (int, required) - The number of the match.
+    - `no` (int, required) - The number of the article.
     - `fields` (str, optional) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+
+        If the `fields` parameter is not passed, the following fields will be applied: `DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT LastChangeUser LastChangeUsername No PhotoUrl PublishOnBeach PublishOnDevelopment PublishOnFivb PublishOnHeadlines PublishOnHome PublishOnMedical PublishOnMsdp PublishOnPresident PublishOnRefereeingRules PublishOnSnow PublishOnTechnicalCoach PublishOnTournament PublishOnTwitter PublishOnVolley PublishOnVolleyballWorld PublishOnWorldVolleyNews ShareUrl Source Url ValidFrom ValidTo DateTime Version VideoUri`.
+
     - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
 
 - Example:
@@ -24,14 +25,17 @@ If the `fields` parameter is not passed, the following fields will be applied: `
     print(a.getArticle(no=69213, fields='no source isVideoLive'))
     ```
 
-### getArticleList(fields, filters, tags, response_format)
+<br>
+
+> ### getArticleList(fields, filters, tags, response_format)
 
 Get a list of article.
 
-If the `fields` parameter is not passed, the following fields will be applied: `DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT LastChangeUser LastChangeUsername No PhotoUrl PublishOnBeach PublishOnDevelopment PublishOnFivb PublishOnHeadlines PublishOnHome PublishOnMedical PublishOnMsdp PublishOnPresident PublishOnRefereeingRules PublishOnSnow PublishOnTechnicalCoach PublishOnTournament PublishOnTwitter PublishOnVolley PublishOnVolleyballWorld PublishOnWorldVolleyNews ShareUrl Source Url ValidFrom ValidTo DateTime Version VideoUri`.
-
 - Parameters:
     - `fields` (str, required) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+
+        If the `fields` parameter is not passed, the following fields will be applied: `DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT LastChangeUser LastChangeUsername No PhotoUrl PublishOnBeach PublishOnDevelopment PublishOnFivb PublishOnHeadlines PublishOnHome PublishOnMedical PublishOnMsdp PublishOnPresident PublishOnRefereeingRules PublishOnSnow PublishOnTechnicalCoach PublishOnTournament PublishOnTwitter PublishOnVolley PublishOnVolleyballWorld PublishOnWorldVolleyNews ShareUrl Source Url ValidFrom ValidTo DateTime Version VideoUri`.
+
     - `filters` (str, optional) - Where the articles were published. Must be space-separated. [(Filter for an article)](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
     - `tags` (str, optional) - Tags in the article data. Must be space-separated. [(Tags Filtering examples)](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
     - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
@@ -71,9 +75,9 @@ If the `fields` parameter is not passed, the following fields will be applied: `
 
 ## VolleyMatch
 
->`class` fivbvis.VolleyMatch()
+`class` VolleyMatch()
 
-### getMatch(no, response_format)
+> ### getMatch(no, response_format)
 
 Get a volleyball match.
 
@@ -90,7 +94,9 @@ Get a volleyball match.
     print(vm.getMatch(9211))
     ```
 
-### getMatchList(no_tournament, fields, filters, response_format)
+<br>
+
+> ### getMatchList(no_tournament, fields, filters, response_format)
 
 Get a list of volleyball matches.
 
