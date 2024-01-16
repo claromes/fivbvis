@@ -22,7 +22,7 @@ Get an article.
     from fivbvis import Article
 
     a = Article()
-    print(a.getArticle(no=69213, fields='no source isVideoLive'))
+    print(a.getArticle(no=69213, fields="no source isVideoLive"))
     ```
 
 <br>
@@ -46,7 +46,7 @@ Get a list of article.
     from fivbvis import Article
 
     a = Article()
-    print(a.getArticleList(filters='Home', tags='volley-tournament:979'))
+    print(a.getArticleList(filters="Home", tags="volley-tournament:979"))
     ```
 
 <br>

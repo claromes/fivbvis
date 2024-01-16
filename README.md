@@ -53,6 +53,8 @@ $ `cd fivbvis`
 
 $ `pip install -r requirements.txt`
 
+$ `pip install --editable .`
+
 ## Author
 
-[Claromes](https://claromes.ocom)
+[Claromes](https://claromes.com)
