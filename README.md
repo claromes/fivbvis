@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/fivbvis)](https://pypi.org/project/fivbvis/)
 
-Python client library for easy integration with [FIVB VIS Web Service](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html) public data, providing XML and JSON responses.
+Python client library for easy integration with [FIVB VIS Web Service](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html), handling public data and only documented requests, and providing XML and JSON responses.
 
 **This client is not affiliated with the Fédération Internationale de Volleyball (FIVB).**
 
@@ -20,10 +20,10 @@ pip install fivbvis
 Basic example:
 
 ```python
-from fivbvis import VolleyMatch
+from fivbvis import Volleyball
 
-vm = VolleyMatch()
-print(vm.getMatch(9211, response_format="json"))
+volley = Volleyball()
+print(volley.getVolleyMatch(9211, response_format="json"))
 ```
 JSON return:
 
@@ -49,8 +49,6 @@ JSON return:
 ## Documentation
 
 [Web Service Requests Reference](https://github.com/claromes/fivbvis/blob/main/docs/reference.md)
-
-[Usage examples](https://github.com/claromes/fivbvis/blob/main/docs/examples.md)
 
 ## Development
 

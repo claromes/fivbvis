@@ -53,9 +53,9 @@ Get a list of article.
 
 ## Beach
 
-`class` BeachMatch()
+`class` Beach()
 
-> ### (no, fields response_format)
+> ### getBeachMatch(no, fields response_format)
 
 Get a beach volleyball match.
 
@@ -70,10 +70,10 @@ Get a beach volleyball match.
 - Example:
 
     ```python
-    from fivbvis import BeachMatch
+    from fivbvis import Beach
 
-    bm = BeachMatch()
-    print(bm.getBeachMatch(15592))
+    beach = Beach()
+    print(beach.getBeachMatch(15592))
     ```
 
 <br>
@@ -96,39 +96,124 @@ Requesting all parameters may result in a 404 error.
 - Example:
 
      ```python
-    from fivbvis import BeachMatch
+    from fivbvis import Beach
 
-    bm = BeachMatch()
-    print(bm.getBeachMatchList(filter='NoTournament="502"'))
-    ```
+    beach = Beach()
+    print(beach.getBeachMatchList(filter='NoTournament="502"'))
 
 <br>
 
-## Confederation
+> ### getBeachOlympicSelectionRanking()
 
-## Federation
+Get the beach volleyball selection ranking for the Olympic Games.
 
-## Image
+Only XML response.
 
-## Match
+<br>
 
-## Phase
+> ### getBeachRound()
 
-## Player
+Get a beach volleyball round.
 
-## Round
+Only XML response.
 
-## Tournament
+<br>
 
-## VolleyClub
+> ### getBeachRoundList()
 
-## VolleyLive
+Get a list of beach volleyball rounds.
 
-## VolleyMatch
+Only XML response.
 
-`class` VolleyMatch()
+<br>
 
-> ### getMatch(no, response_format)
+> ### getBeachRoundRanking()
+
+Get the ranking of a beach volleyball round.
+
+Only XML response.
+
+<br>
+
+> ### getBeachTeam()
+
+Get a beach volleyball team.
+
+<br>
+
+> ### getBeachTeamList()
+
+Get a list of beach volleyball teams.
+
+<br>
+
+> ### getBeachTournament()
+
+Get a beach volleyball tournament.
+
+<br>
+
+> ### getBeachTournamentRanking()
+
+Get the ranking of a beach volleyball tournament.
+
+Only XML response.
+
+<br>
+
+> ### getBeachWorldTourRanking()
+
+Get a beach volleyball World Tour ranking.
+
+Only XML response.
+
+<br>
+
+## Event `WIP`
+
+`class` Event()
+
+> ### getEvent()
+
+Get an event.
+
+Only XML response.
+
+<br>
+
+> ### getEventList()
+
+Get a list of events.
+
+Only XML response.
+
+<br>
+
+## Image `WIP`
+
+`class` Image()
+
+> ### getImage()	
+
+Get the content of an image.
+
+<br>
+
+## Player `WIP`
+
+`class` Player()
+
+> ### getPlayer()
+
+Get a player.
+
+<br>
+
+## Volleyball `WIP`
+
+`class` Volleyball()
+
+> ### getVolleyMatch(no, response_format)
 
 Get a volleyball match.
 
@@ -143,15 +228,15 @@ Get a volleyball match.
 - Example:
 
     ```python
-    from fivbvis import VolleyMatch
+    from fivbvis import Volleyball
 
-    vm = VolleyMatch()
-    print(vm.getMatch(9211))
+    volley = Volleyball()
+    print(volley.GetVolleyMatch(9211))
     ```
 
 <br>
 
-> ### getMatchList(no_tournament, fields, filter, response_format)
+> ### getVolleyMatchList(no_tournament, fields, filter, response_format)
 
 Get a list of volleyball matches.
 
@@ -169,24 +254,77 @@ Requesting all parameters may result in a 404 error.
 - Example:
 
      ```python
-    from fivbvis import VolleyMatch
+    from fivbvis import Volleyball
 
-    vm = VolleyMatch()
-    print(vm.getMatchList(no_tournament=979, filter='FirstDate="2017-7-5" LastDate="2017-7-5"'))
+    volley = Volleyball()
+    print(volley.getVolleyMatchList(no_tournament=979, filter='FirstDate="2017-7-5" LastDate="2017-7-5"'))
     ```
 
 <br>
 
-## VolleyPlayer
+> ### getVolleyPlayer()
 
-## VolleyPool
+Get a registration of a player in a volleyball tournament.
 
-## VolleyRankingDefinition
+<br>
 
-## VolleyStatistic
+> ### getVolleyPlayerList()
 
-## VolleyTeam
+Get a list of registrations of players in volleyball tournaments.
 
-## VolleyTournament
+<br>
 
-## VolleyTransfer
+> ### getVolleyPlayersRankingList()
+
+Get the list of rankings of players in a volleyball tournament.
+
+Only XML response.
+
+<br>
+
+> ### getVolleyPool()
+
+Get a volleyball pool.
+
+<br>
+
+> ### getVolleyPoolList()
+
+Get a list of volleyball pools.
+
+<br>
+
+> ### getVolleyPoolRanking()
+
+Get the ranking for a volleyball pool.
+
+<br>
+
+> ### getVolleyTeam()
+
+Get a registration of a team in a volleyball tournament.
+
+<br>
+
+> ### getVolleyTeamList()
+
+Get a list of registrations of teams in volleyball tournaments.
+
+<br>
+
+> ### getVolleyTournament()
+
+Get a volleyball tournament.
+
+<br>
+
+> ### getVolleyTournamentList()
+
+Get a list of volleyball tournaments.
+
+<br>
+
+> ### getVolleyTournamentRanking()
+
+Get the ranking of a volleyball tournament.
+Note: the `teamType` property is not available in JSON.
