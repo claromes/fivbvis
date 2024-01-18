@@ -1,5 +1,5 @@
 from .fivbvis import FivbVis
-from .references import Article, VolleyMatch
+from .references import Article, BeachMatch, VolleyMatch
 
 from . import version
 

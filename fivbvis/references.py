@@ -8,21 +8,33 @@ class Article(FivbVis):
         self.fivb_vis = FivbVis()
 
     def getArticle(self, no, fields=ARTICLE_DEFAULT_FIELDS, response_format='xml'):
-        result = self.fivb_vis.get_with_fields('GetArticle', no, fields, response_format)
+        result = self.fivb_vis.get('GetArticle', no, fields, response_format)
         return result
 
-    def getArticleList(self, fields=ARTICLE_DEFAULT_FIELDS, filters='', tags='', response_format='xml'):
-        result = self.fivb_vis.get_list_with_tags('GetArticleList', fields, filters, tags, response_format)
+    def getArticleList(self, fields=ARTICLE_DEFAULT_FIELDS, filter='', tags='', response_format='xml'):
+        result = self.fivb_vis.get_list_with_tags('GetArticleList', fields, filter, tags, response_format)
+        return result
+
+class BeachMatch(FivbVis):
+    def __init__(self):
+        self.fivb_vis = FivbVis()
+
+    def getBeachMatch(self, no, fields=BEACH_MATCH_DEFAULT_FIELDS, response_format='xml'):
+        result = self.fivb_vis.get('GetBeachMatch', no, fields, response_format)
+        return result
+
+    def getBeachMatchList(self, fields=BEACH_MATCH_LIST_DEFAULT_FIELDS, filter='', response_format='xml'):
+        result = self.fivb_vis.get_list_without_no('GetBeachMatchList', fields, filter, response_format)
         return result
 
 class VolleyMatch(FivbVis):
     def __init__(self):
         self.fivb_vis = FivbVis()
 
-    def getMatch(self, no, response_format='xml'):
-        result = self.fivb_vis.get('GetVolleyMatch', no, response_format)
+    def getMatch(self, no, fields=VOLLEY_MATCH_DEFAULT_FIELDS, response_format='xml'):
+        result = self.fivb_vis.get('GetVolleyMatch', no, fields, response_format)
         return result
 
-    def getMatchList(self, no_tournament, fields=VOLLEY_MATCH_LIST_DEFAULT_FIELDS, filters='', response_format='xml'):
-        result = self.fivb_vis.get_list('GetVolleyMatchList', no_tournament, fields, filters, response_format)
+    def getMatchList(self, no_tournament, fields=VOLLEY_MATCH_DEFAULT_FIELDS, filter='', response_format='xml'):
+        result = self.fivb_vis.get_list('GetVolleyMatchList', no_tournament, fields, filter, response_format)
         return result

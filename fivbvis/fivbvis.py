@@ -16,18 +16,18 @@ class FivbVis():
         elif response_format == 'json':
             return response.json()
 
-    def get(self, request_type, no, response_format):
-        url = self.base_url + f"<Request Type='{request_type}' No='{no}' />"
-        return self.make_request(url, request_type, response_format)
-
-    def get_with_fields(self, request_type, no, fields, response_format):
+    def get(self, request_type, no, fields, response_format):
         url = self.base_url + f"<Request Type='{request_type}' No='{no}' Fields='{fields}'/>"
         return self.make_request(url, request_type, response_format)
 
-    def get_list(self, request_type, no_tournament, fields, filters, response_format):
-        url = self.base_url + f"<Request Type='{request_type}' Fields='{fields}'><Filter {filters} NoTournament='{no_tournament}' /></Request>"
+    def get_list(self, request_type, no_tournament, fields, filter, response_format):
+        url = self.base_url + f"<Request Type='{request_type}' Fields='{fields}'><Filter {filter} NoTournament='{no_tournament}' /></Request>"
         return self.make_request(url, request_type, response_format)
 
-    def get_list_with_tags(self, request_type, fields, filters, tags, response_format):
-        url = self.base_url + f"<Request Type='{request_type}' Fields='{fields}'><Filter>'{filters}'<Tags>{tags}</Tags></Filter></Request>"
+    def get_list_with_tags(self, request_type, fields, filter, tags, response_format):
+        url = self.base_url + f"<Request Type='{request_type}' Fields='{fields}'><Filter>'{filter}'<Tags>{tags}</Tags></Filter></Request>"
+        return self.make_request(url, request_type, response_format)
+
+    def get_list_without_no(self, request_type, fields, filter, response_format):
+        url = self.base_url + f"<Request Type='{request_type}' Fields='{fields}'><Filter {filter} /></Request>"
         return self.make_request(url, request_type, response_format)

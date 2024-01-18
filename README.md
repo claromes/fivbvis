@@ -30,20 +30,27 @@ JSON return:
 ```json
 {
    "data":{
-      "assistantScorerCountryCode":"None",
-      "assistantScorerFirstName":"None",
-      "assistantScorerLastName":"None",
-      "beginDateTimeUtc":"2018-10-07T04:25:00Z",
-      "buyTicketsUrl":"",
       "city":"Nagoya",
-      "countryCode":"JP",
-      ...
+      "countryName":"Japan",
+      "dateTimeLocal":"2018-10-07T13:25:00",
+      "durationTotal":8160,
+      "hall":"Nippongaishi Hall",
+      "matchPointsA":3,
+      "matchPointsB":2,
+      "matchResultText":"3-2",
+      "no":9211,
+      "noTournament":1029,
+      "season":"2018",
+      "teamAName":"Germany",
+      "teamBName":"Brazil"
    }
 }
 ```
 ## Documentation
 
-[Web Service Requests Reference](docs/reference.md)
+[Web Service Requests Reference](https://github.com/claromes/fivbvis/blob/main/docs/reference.md)
+
+[Usage examples](https://github.com/claromes/fivbvis/blob/main/docs/examples.md)
 
 ## Development
 

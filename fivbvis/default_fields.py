@@ -1,3 +1,7 @@
-ARTICLE_DEFAULT_FIELDS = 'DateTime DeletedDT ENewsLocation HasPhoto IsVideoLive LastChangeDT LastChangeUser LastChangeUsername No PhotoUrl PublishOnBeach PublishOnDevelopment PublishOnFivb PublishOnHeadlines PublishOnHome PublishOnMedical PublishOnMsdp PublishOnPresident PublishOnRefereeingRules PublishOnSnow PublishOnTechnicalCoach PublishOnTournament PublishOnTwitter PublishOnVolley PublishOnVolleyballWorld PublishOnWorldVolleyNews ShareUrl Source Url ValidFrom ValidTo	DateTime Version VideoUri'
+ARTICLE_DEFAULT_FIELDS = 'No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive'
 
-VOLLEY_MATCH_LIST_DEFAULT_FIELDS = 'City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName'
+BEACH_MATCH_DEFAULT_FIELDS = 'NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB'
+
+BEACH_MATCH_LIST_DEFAULT_FIELDS = 'NoInTournament LocalDate LocalTime TeamAName TeamBName Court MatchPointsA MatchPointsB'
+
+VOLLEY_MATCH_DEFAULT_FIELDS = 'City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName'
