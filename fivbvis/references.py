@@ -27,6 +27,33 @@ class Beach(FivbVis):
         result = self.fivb_vis.get_list_without_no('GetBeachMatchList', fields, filter, response_format)
         return result
 
+    def getBeachOlympicSelectionRanking():
+        return
+
+    def getBeachRound():
+        return
+
+    def getBeachRoundList():
+        return
+
+    def getBeachRoundRanking():
+        return
+
+    def getBeachTeam():
+        return
+
+    def getBeachTeamList():
+        return
+
+    def getBeachTournament():
+        return
+
+    def getBeachTournamentRanking():
+        return
+
+    def getBeachWorldTourRanking():
+        return
+        
 class Volleyball(FivbVis):
     def __init__(self):
         self.fivb_vis = FivbVis()
