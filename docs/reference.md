@@ -1,46 +1,60 @@
-# Web Service Requests Reference
+# FIVB VIS Python Client Documentation
+
+The documentation is based on FIVB VIS web service requests. It is simple and includes only requests documented by the FIVB developer team.
+
+[This list contains all available requests via the VIS web service](https://www.fivb.org/VisSDK/VisWebService/#RequestList.html); those with links are documented. Currently, this Python client is read-only.
 
 ## Article
 
 `class` Article()
 
-> ### getArticle(no, fields, response_format)
+- ### `getArticle(no, fields, content_type)`
 
-Get an article.
+    Get an article
 
-- Parameters:
-    - `no` (int, mandatory) - The number of the article.
-    - `fields` (str, optional) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+    #### Parameters
 
-        If the `fields` parameter is not passed, the following fields will be applied: `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive`.
+    > | name           | type     | data type | description                | note                    | default                                                                                                |
+    > |----------------|----------|-----------|----------------------------|-------------------------|--------------------------------------------------------------------------------------------------------|
+    > | `no`           | required | int       | Number of the article      |                         |                                                                                                        |
+    > | `fields`       | optional | str       | Fields in the article data | Must be space-separated | `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive` |
+    > | `content_type` | optional | str       | Response content-type      | `xml` or `json`         | `xml`                                                                                                  |
 
-    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
+    #### Resource
 
-- Example:
+    [List of Article Fields](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+
+    #### Example
 
     ```python
     from fivbvis import Article
 
     a = Article()
-    print(a.getArticle(no=69213, fields="no source isVideoLive"))
+    print(a.getArticle(no=69213, fields="no source isVideoLive", content_type="json"))
     ```
 
-<br>
+- ### `getArticleList(fields, filter, tags, content_type)`
 
-> ### getArticleList(fields, filter, tags, response_format)
+    Get a list of article
 
-Get a list of article.
+    #### Parameters
 
-- Parameters:
-    - `fields` (str, mandatory) - Fields in the article data. Must be space-separated. [(Fields/Properties list of each article)](https://www.fivb.org/VisSDK/VisWebService/Article.html)
+    > | name           | type     | data type | description                       | note                    | default                                                                                                |
+    > |----------------|----------|-----------|-----------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------|
+    > | `fields`       | required | str       | Fields in the article data        | Must be space-separated | `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive` |
+    > | `filter`       | optional | str       | Where the articles were published | Must be space-separated |                                                                                                        |
+    > | `tags`         | optional | str       | Tags in the article data          | Must be space-separated |                                                                                                        |
+    > | `content_type` | optional | str       | Response content-type             | `xml` or `json`         | `xml`                                                                                                  |
 
-        If the `fields` parameter is not passed, the following fields will be applied: `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive`.
+    #### Resources
 
-    - `filter` (str, optional) - Where the articles were published. Must be space-separated. [(Filter for an article)](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
-    - `tags` (str, optional) - Tags in the article data. Must be space-separated. [(Tags Filtering examples)](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
-    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
+    [List of Article Fields](https://www.fivb.org/VisSDK/VisWebService/Article.html)
 
-- Example:
+    [Filters for an article](https://www.fivb.org/VisSDK/VisWebService/PressReleasePublishOn.html)
+
+    [Tags Filtering examples](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
+
+    #### Example
 
     ```python
     from fivbvis import Article
@@ -49,282 +63,247 @@ Get a list of article.
     print(a.getArticleList(filter="Home", tags="volley-tournament:979"))
     ```
 
-<br>
-
 ## Beach `WIP`
 
 `class` Beach()
 
-> ### getBeachMatch(no, fields response_format)
+- ### `getBeachMatch(no, fields, content_type)`
 
-Get a beach volleyball match.
+    Get a beach volleyball match
 
-- Parameters:
-    - `no` (int, mandatory) - The number of the match.
-    - `fields` (str, optional) - Fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/BeachMatch.html)
+    #### Parameters
 
-        If the `fields` parameter is not passed, the following fields will be applied: `NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB`.
+    > | name           | type     | data type | description                               | note                    | default                                                                                                      |
+    > |----------------|----------|-----------|-------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    > | `no`           | required | int       | Number of the match                       |                         |                                                                                                              |
+    > | `fields`       | optional | str       | Fields in the beach volleyball match data | Must be space-separated | `NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB` |
+    > | `content_type` | optional | str       | Response content-type                     | `xml` or `json`         | `xml`                                                                                                        |
 
-    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
+    #### Resource
 
-- Example:
+    [List of Beach Match Fields](https://www.fivb.org/VisSDK/VisWebService/BeachMatch.html)
+
+    #### Example
 
     ```python
     from fivbvis import Beach
 
-    beach = Beach()
-    print(beach.getBeachMatch(15592))
+    b = Beach()
+    print(b.getBeachMatch(15592))
     ```
 
-<br>
+- ### `getBeachMatchList(fields, filter, content_type)`
 
-> ### getBeachMatchList(fields, filter, response_format)
+    Get a list of beach volleyball matches
 
-Get a list of beach volleyball matches.
+    #### Parameters
 
-Requesting all parameters may result in a 404 error.
+    > | name            | type     | data type | description                                | note                    | default                                                                                                      |
+    > |-----------------|----------|-----------|--------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    > | `filter`        | required | str       | Filters in the beach volleyball match data | Must be space-separated |                                                                                                              |
+    > | `fields`        | optional | str       | Fields in the beach volleyball match data  | Must be space-separated | `NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB` |
+    > | `content_type`  | optional | str       | Response content-type                      | `xml` or `json`         | `xml`                                                                                                        |
 
-- Parameters:
-    - `no_tournament` (int, mandatory) - The number of the tournament.
-    - `fields` (str, optional) - Fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/BeachMatch.html)
+    #### Resources
 
-        If the `fields` parameter is not passed, the following fields will be applied: `NoInTournament LocalDate LocalTime TeamAName TeamBName Court MatchPointsA MatchPointsB`.
+    [List of Beach Match Filter](https://www.fivb.org/VisSDK/VisWebService/BeachMatchFilter.html)
 
-    - `filter` (str, optional) - Filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/BeachMatchFilter.html)
-    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
+    [List of Beach Match Fields](https://www.fivb.org/VisSDK/VisWebService/BeachMatch.html)
 
-- Example:
+    #### Example
 
-     ```python
+    ```python
     from fivbvis import Beach
 
-    beach = Beach()
-    print(beach.getBeachMatchList(filter='NoTournament="502"'))
+    b = Beach()
+    print(b.getBeachMatchList(filter='NoTournament="502"'))
+    ```
 
-<br>
+- ### `getBeachOlympicSelectionRanking()`
 
-> ### getBeachOlympicSelectionRanking()
+    Get the beach volleyball selection ranking for the Olympic Games
 
-Get the beach volleyball selection ranking for the Olympic Games.
+    Only XML response
 
-Only XML response.
+- ### `getBeachRound()`
 
-<br>
+    Get a beach volleyball round
 
-> ### getBeachRound()
+    Only XML response
 
-Get a beach volleyball round.
+- ### `getBeachRoundList()`
 
-Only XML response.
+    Get a list of beach volleyball rounds
 
-<br>
+    Only XML response
 
-> ### getBeachRoundList()
+- ### `getBeachRoundRanking()`
 
-Get a list of beach volleyball rounds.
+    Get the ranking of a beach volleyball round
 
-Only XML response.
+    Only XML response
 
-<br>
+- ### `getBeachTeam()`
 
-> ### getBeachRoundRanking()
+    Get a beach volleyball team
 
-Get the ranking of a beach volleyball round.
+- ### `getBeachTeamList()`
 
-Only XML response.
+    Get a list of beach volleyball teams
 
-<br>
+- ### `getBeachTournament()`
 
-> ### getBeachTeam()
+    Get a beach volleyball tournament
 
-Get a beach volleyball team.
+- ### `getBeachTournamentRanking()`
 
-<br>
+    Get the ranking of a beach volleyball tournament
 
-> ### getBeachTeamList()
+    Only XML response
 
-Get a list of beach volleyball teams.
+- ### `getBeachWorldTourRanking()`
 
-<br>
+    Get a beach volleyball World Tour ranking
 
-> ### getBeachTournament()
-
-Get a beach volleyball tournament.
-
-<br>
-
-> ### getBeachTournamentRanking()
-
-Get the ranking of a beach volleyball tournament.
-
-Only XML response.
-
-<br>
-
-> ### getBeachWorldTourRanking()
-
-Get a beach volleyball World Tour ranking.
-
-Only XML response.
-
-<br>
+    Only XML response
 
 ## Event `WIP`
 
 `class` Event()
 
-> ### getEvent()
+- ### `getEvent()`
 
-Get an event.
+    Get an event
 
-Only XML response.
+    Only XML response
 
-<br>
+- ### `getEventList()`
 
-> ### getEventList()
+    Get a list of events
 
-Get a list of events.
-
-Only XML response.
-
-<br>
+    Only XML response
 
 ## Image `WIP`
 
 `class` Image()
 
-> ### getImage()	
+- ### `getImage()`
 
-Get the content of an image.
-
-<br>
+    Get the content of an image
 
 ## Player `WIP`
 
 `class` Player()
 
-> ### getPlayer()
+- ### `getPlayer()`
 
-Get a player.
-
-<br>
+    Get a player
 
 ## Volleyball `WIP`
 
 `class` Volleyball()
 
-> ### getVolleyMatch(no, response_format)
+- ### `getVolleyMatch(no, fields, content_type)`
 
-Get a volleyball match.
+    Get a volleyball match
 
-- Parameters:
-    - `no` (int, mandatory) - The number of the match.
-    - `fields` (str, optional) - Fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+    #### Parameters
 
-        If the `fields` parameter is not passed, the following fields will be applied: `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName`.
+    > | name           | type     | data type | description                         | note                    | default                                                                                                      |
+    > |----------------|----------|-----------|-------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    > | `no`           | required | int       | Number of the match                 |                         |                                                                                                              |
+    > | `fields`       | optional | str       | Fields in the volleyball match data | Must be space-separated | `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName` |                                                                                                             |
+    > | `content_type` | optional | str       | Response content-type               | `xml` or `json`         | `xml`                                                                                                        |
 
-    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
+    #### Resource
 
-- Example:
+    [List of Volley Match Fields](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+
+    #### Example
 
     ```python
     from fivbvis import Volleyball
 
-    volley = Volleyball()
-    print(volley.GetVolleyMatch(9211))
+    v = Volleyball()
+    print(v.GetVolleyMatch(9211))
     ```
 
-<br>
+- ### `getVolleyMatchList(no_tournament, fields, filter, content_type)`
 
-> ### getVolleyMatchList(no_tournament, fields, filter, response_format)
+    Get a list of volleyball matches
 
-Get a list of volleyball matches.
+    #### Parameters
 
-Requesting all parameters may result in a 404 error.
+    > | name            | type     | data type | description                          | note                    | default                                                                                                      |
+    > |-----------------|----------|-----------|--------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    > | `no_tournament` | required | int       | Number of the tournament             |                         |                                                                                                              |
+    > | `fields`        | optional | str       | Fields in the volleyball match data  | Must be space-separated | `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName` |
+    > | `filter`        | optional | str       | Filters in the volleyball match data | Must be space-separated |                                                                                                              |
+    > | `content_type`  | optional | str       | Response content-type                | `xml` or `json`         | `xml`                                                                                                        |
 
-- Parameters:
-    - `no_tournament` (int, mandatory) - The number of the tournament.
-    - `fields` (str, optional) - Fields in the volleyball match data. Must be space-separated. [(Fields/Properties list of each match)](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
+    #### Resources
 
-        If the `fields` parameter is not passed, the following fields will be applied: `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName`.
+    [List of Volley Match Fields](https://www.fivb.org/VisSDK/VisWebService/#VolleyMatch.html)
 
-    - `filter` (str, optional) - Filters in the volleyball match data. Must be space-separated. [(Filter list of each match)](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
-    - `response_format` (str, optional) - The response format: "xml" or "json". By default the response format is XML.
+    [List of Volley Match Filter](https://www.fivb.org/VisSDK/VisWebService/VolleyMatchFilter.html)
 
-- Example:
+    #### Example
 
-     ```python
+    ```python
     from fivbvis import Volleyball
 
-    volley = Volleyball()
-    print(volley.getVolleyMatchList(no_tournament=979, filter='FirstDate="2017-7-5" LastDate="2017-7-5"'))
+    v = Volleyball()
+    print(v.getVolleyMatchList(no_tournament=979, filter='FirstDate="2017-7-5" LastDate="2017-7-5"'))
     ```
 
-<br>
+    #### Note
 
-> ### getVolleyPlayer()
+    Requesting all parameters may result in a 404 error
 
-Get a registration of a player in a volleyball tournament.
+- ### `getVolleyPlayer()`
 
-<br>
+    Get a registration of a player in a volleyball tournament
 
-> ### getVolleyPlayerList()
+- ### `getVolleyPlayerList()`
 
-Get a list of registrations of players in volleyball tournaments.
+    Get a list of registrations of players in volleyball tournaments
 
-<br>
+- ### `getVolleyPlayersRankingList()`
 
-> ### getVolleyPlayersRankingList()
+    Get the list of rankings of players in a volleyball tournament
 
-Get the list of rankings of players in a volleyball tournament.
+    Only XML response
 
-Only XML response.
+- ### `getVolleyPool()`
 
-<br>
+    Get a volleyball pool
 
-> ### getVolleyPool()
+- ### `getVolleyPoolList()`
 
-Get a volleyball pool.
+    Get a list of volleyball pools
 
-<br>
+- ### `getVolleyPoolRanking()`
 
-> ### getVolleyPoolList()
+    Get the ranking for a volleyball pool
 
-Get a list of volleyball pools.
+- ### `getVolleyTeam()`
 
-<br>
+    Get a registration of a team in a volleyball tournament
 
-> ### getVolleyPoolRanking()
+- ### `getVolleyTeamList()`
 
-Get the ranking for a volleyball pool.
+    Get a list of registrations of teams in volleyball tournaments
 
-<br>
+- ### `getVolleyTournament()`
 
-> ### getVolleyTeam()
+    Get a volleyball tournament
 
-Get a registration of a team in a volleyball tournament.
+- ### `getVolleyTournamentList()`
 
-<br>
+    Get a list of volleyball tournaments
 
-> ### getVolleyTeamList()
+- ### `getVolleyTournamentRanking()`
 
-Get a list of registrations of teams in volleyball tournaments.
+    Get the ranking of a volleyball tournament
 
-<br>
-
-> ### getVolleyTournament()
-
-Get a volleyball tournament.
-
-<br>
-
-> ### getVolleyTournamentList()
-
-Get a list of volleyball tournaments.
-
-<br>
-
-> ### getVolleyTournamentRanking()
-
-Get the ranking of a volleyball tournament.
-Note: the `teamType` property is not available in JSON.
+    Note: the `teamType` property is not available in JSON
