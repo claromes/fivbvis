@@ -14,11 +14,11 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
 
     #### Parameters
 
-    > | name           | type     | data type | description                | note                    | default                                                                                                |
-    > |----------------|----------|-----------|----------------------------|-------------------------|--------------------------------------------------------------------------------------------------------|
-    > | `no`           | required | int       | Number of the article      |                         |                                                                                                        |
-    > | `fields`       | optional | str       | Fields in the article data | Must be space-separated | `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive` |
-    > | `content_type` | optional | str       | Response content-type      | `xml` or `json`         | `xml`                                                                                                  |
+    | name           | type     | data type | description                | note                    | default                                                                                                |
+    |----------------|----------|-----------|----------------------------|-------------------------|--------------------------------------------------------------------------------------------------------|
+    | `no`           | required | int       | Number of the article      |                         |                                                                                                        |
+    | `fields`       | optional | str       | Fields in the article data | Must be space-separated | `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive` |
+    | `content_type` | optional | str       | Response content-type      | `xml` or `json`         | `xml`                                                                                                  |
 
     #### Resource
 
@@ -39,12 +39,12 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
 
     #### Parameters
 
-    > | name           | type     | data type | description                       | note                    | default                                                                                                |
-    > |----------------|----------|-----------|-----------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------|
-    > | `fields`       | required | str       | Fields in the article data        | Must be space-separated | `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive` |
-    > | `filter`       | optional | str       | Where the articles were published | Must be space-separated |                                                                                                        |
-    > | `tags`         | optional | str       | Tags in the article data          | Must be space-separated |                                                                                                        |
-    > | `content_type` | optional | str       | Response content-type             | `xml` or `json`         | `xml`                                                                                                  |
+    | name           | type     | data type | description                       | note                    | default                                                                                                |
+    |----------------|----------|-----------|-----------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------|
+    | `fields`       | required | str       | Fields in the article data        | Must be space-separated | `No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive` |
+    | `filter`       | optional | str       | Where the articles were published | Must be space-separated |                                                                                                        |
+    | `tags`         | optional | str       | Tags in the article data          | Must be space-separated |                                                                                                        |
+    | `content_type` | optional | str       | Response content-type             | `xml` or `json`         | `xml`                                                                                                  |
 
     #### Resources
 
@@ -73,11 +73,11 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
 
     #### Parameters
 
-    > | name           | type     | data type | description                               | note                    | default                                                                                                      |
-    > |----------------|----------|-----------|-------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
-    > | `no`           | required | int       | Number of the match                       |                         |                                                                                                              |
-    > | `fields`       | optional | str       | Fields in the beach volleyball match data | Must be space-separated | `NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB` |
-    > | `content_type` | optional | str       | Response content-type                     | `xml` or `json`         | `xml`                                                                                                        |
+    | name           | type     | data type | description                               | note                    | default                                                                                                      |
+    |----------------|----------|-----------|-------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    | `no`           | required | int       | Number of the match                       |                         |                                                                                                              |
+    | `fields`       | optional | str       | Fields in the beach volleyball match data | Must be space-separated | `NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB` |
+    | `content_type` | optional | str       | Response content-type                     | `xml` or `json`         | `xml`                                                                                                        |
 
     #### Resource
 
@@ -98,11 +98,11 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
 
     #### Parameters
 
-    > | name            | type     | data type | description                                | note                    | default                                                                                                      |
-    > |-----------------|----------|-----------|--------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
-    > | `filter`        | required | str       | Filters in the beach volleyball match data | Must be space-separated |                                                                                                              |
-    > | `fields`        | optional | str       | Fields in the beach volleyball match data  | Must be space-separated | `NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB` |
-    > | `content_type`  | optional | str       | Response content-type                      | `xml` or `json`         | `xml`                                                                                                        |
+    | name            | type     | data type | description                                | note                    | default                                                                                                      |
+    |-----------------|----------|-----------|--------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    | `filter`        | required | str       | Filters in the beach volleyball match data | Must be space-separated |                                                                                                              |
+    | `fields`        | optional | str       | Fields in the beach volleyball match data  | Must be space-separated | `NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB` |
+    | `content_type`  | optional | str       | Response content-type                      | `xml` or `json`         | `xml`                                                                                                        |
 
     #### Resources
 
@@ -209,11 +209,11 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
 
     #### Parameters
 
-    > | name           | type     | data type | description                         | note                    | default                                                                                                      |
-    > |----------------|----------|-----------|-------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
-    > | `no`           | required | int       | Number of the match                 |                         |                                                                                                              |
-    > | `fields`       | optional | str       | Fields in the volleyball match data | Must be space-separated | `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName` |                                                                                                             |
-    > | `content_type` | optional | str       | Response content-type               | `xml` or `json`         | `xml`                                                                                                        |
+    | name           | type     | data type | description                         | note                    | default                                                                                                      |
+    |----------------|----------|-----------|-------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    | `no`           | required | int       | Number of the match                 |                         |                                                                                                              |
+    | `fields`       | optional | str       | Fields in the volleyball match data | Must be space-separated | `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName` |                                                                                                             |
+    | `content_type` | optional | str       | Response content-type               | `xml` or `json`         | `xml`                                                                                                        |
 
     #### Resource
 
@@ -234,12 +234,12 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
 
     #### Parameters
 
-    > | name            | type     | data type | description                          | note                    | default                                                                                                      |
-    > |-----------------|----------|-----------|--------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
-    > | `no_tournament` | required | int       | Number of the tournament             |                         |                                                                                                              |
-    > | `fields`        | optional | str       | Fields in the volleyball match data  | Must be space-separated | `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName` |
-    > | `filter`        | optional | str       | Filters in the volleyball match data | Must be space-separated |                                                                                                              |
-    > | `content_type`  | optional | str       | Response content-type                | `xml` or `json`         | `xml`                                                                                                        |
+    | name            | type     | data type | description                          | note                    | default                                                                                                      |
+    |-----------------|----------|-----------|--------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------|
+    | `no_tournament` | required | int       | Number of the tournament             |                         |                                                                                                              |
+    | `fields`        | optional | str       | Fields in the volleyball match data  | Must be space-separated | `City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName` |
+    | `filter`        | optional | str       | Filters in the volleyball match data | Must be space-separated |                                                                                                              |
+    | `content_type`  | optional | str       | Response content-type                | `xml` or `json`         | `xml`                                                                                                        |
 
     #### Resources
 
