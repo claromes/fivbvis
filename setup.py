@@ -23,7 +23,7 @@ setup(
     keywords='fivbvis fivb volleyball beachvolleyball sports datasets analytics',
     url='https://github.com/claromes/fivbvis',
     project_urls={
-        'Documentation': 'https://github.com/claromes/fivbvis/docs/reference.md',
+        'Documentation': 'https://github.com/claromes/fivbvis/blob/main/docs/documentation.md',
         'Bug Tracker': 'https://github.com/claromes/fivbvis/issues',
         'Releases': 'https://github.com/claromes/fivbvis/releases',
     },

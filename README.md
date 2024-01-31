@@ -6,11 +6,7 @@ Python client library for easy integration with International Volleyball Federat
 
 The VIS Web Service enables third party applications to access all public data about volleyball, beach volleyball and other events. FIVB VIS Python Client facilitates access for Python programmers, enabling access to public data such as articles, matches, events, images, players, player rankings, and tournaments.
 
-**This client is not affiliated with the Fédération Internationale de Volleyball (FIVB).**
-
-## Requirement
-
-- Python 3.8+
+This client is compatible with Python versions 3.8 and above, but it has been tested specifically on versions 3.8 and 3.11.
 
 ## Installation
 
@@ -51,7 +47,7 @@ JSON response:
 
 ## Documentation
 
-Check the [docs folder](https://github.com/claromes/fivbvis/blob/main/docs/reference.md) for detailed information and examples
+Check the [docs folder](https://github.com/claromes/fivbvis/blob/main/docs/documentation.md) for detailed information and examples.
 
 ## Author
 
