@@ -1,4 +1,4 @@
-import requests
+import httpx
 
 class FivbVis():
     def __init__(self):
@@ -9,7 +9,7 @@ class FivbVis():
             raise ValueError(f'{content_type}: The provided value is not accepted.')
 
         headers = {'Accept': f'application/{content_type}'}
-        response = requests.get(url, headers=headers)
+        response = httpx.get(url, headers=headers)
 
         if content_type == 'xml':
             return response.text
