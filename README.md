@@ -1,6 +1,6 @@
 # FIVB VIS Python Client
 
-[![PyPI](https://img.shields.io/pypi/v/fivbvis)](https://pypi.org/project/fivbvis/) [![VIS Web Service](https://img.shields.io/badge/VIS%20Web%20Service-v24-%234285f4)](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html)
+[![PyPI](https://img.shields.io/pypi/v/fivbvis)](https://pypi.org/project/fivbvis/) [![VIS Web Service](https://img.shields.io/badge/VIS%20Web%20Service-v24-%234285f4)](https://www.fivb.org/VisSDK/VisWebService/#Introduction.html) [![PyPI](https://img.shields.io/pypi/dm/fivbvis.svg)](https://pypistats.org/packages/fivbvis)
 
 Python client library for easy integration with International Volleyball Federation VIS Web Service, handling public data and only documented requests, and providing XML and JSON responses.
 
