@@ -1,4 +1,5 @@
 import httpx
+import json
 
 class FivbVis():
     def __init__(self):
@@ -14,7 +15,8 @@ class FivbVis():
         if content_type == 'xml':
             return response.text
         elif content_type == 'json':
-            return response.json()
+            response_json = json.dumps(response.json(), ensure_ascii=False)
+            return response_json
 
     def get(self, request_type, no, fields, content_type):
         url = self.base_url + f"<Request Type='{request_type}' No='{no}' Fields='{fields}'/>"
