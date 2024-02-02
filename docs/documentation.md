@@ -32,7 +32,7 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
     a = Article()
     print(a.getArticle(no=69213, fields="no source isVideoLive", content_type="json"))
     ```
-- ### getArticleList( **`fields`**="No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive", **`filter`**=None, **`tags`**=None, **`content_type`**="xml")
+- ### getArticleList( **`fields`**="No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive", **`filter`**, **`tags`**, **`content_type`**="xml")
 
 
     Get a list of article
@@ -41,7 +41,7 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
 
     | name           | type     | data type | description                       | note                    |
     |----------------|----------|-----------|-----------------------------------|-------------------------|
-    | `fields`       | optional | str       | Fields in the article data        | Must be space-separated |
+    | `fields`       | required | str       | Fields in the article data        | Must be space-separated |
     | `filter`       | optional | str       | Where the articles were published | Must be space-separated |
     | `tags`         | optional | str       | Tags in the article data          | Must be space-separated |
     | `content_type` | optional | str       | Response content-type             | `xml` or `json`         |
@@ -92,7 +92,7 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
     print(b.getBeachMatch(15592))
     ```
 
-- ### getBeachMatchList(**`fields`**="NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB", **`filter`**=None, **`content_type`**="xml")
+- ### getBeachMatchList(**`fields`**="NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB", **`filter`**, **`content_type`**="xml")
 
     Get a list of beach volleyball matches
 
@@ -101,7 +101,7 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
     | name            | type     | data type | description                                | note                    |
     |-----------------|----------|-----------|--------------------------------------------|-------------------------|
     | `fields`        | optional | str       | Fields in the beach volleyball match data  | Must be space-separated |
-    | `filter`        | optional | str       | Filters in the beach volleyball match data | Must be space-separated |
+    | `filter`        | optional | str       | Filters in the beach volleyball match data | Must be space-separated. If it is not specified, the response will contain all the beach volleyball matches |
     | `content_type`  | optional | str       | Response content-type                      | `xml` or `json`         |
 
     #### Resources
@@ -228,7 +228,7 @@ The documentation is based on FIVB VIS web service requests. It is simple and in
     print(v.GetVolleyMatch(9211))
     ```
 
-- ### getVolleyMatchList(**`no_tournament`**, **`fields`**="City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName", **`filter`**=None, **`content_type`**="xml")
+- ### getVolleyMatchList(**`no_tournament`**, **`fields`**="City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName", **`filter`**, **`content_type`**="xml")
 
     Get a list of volleyball matches
 

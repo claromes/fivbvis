@@ -9,7 +9,7 @@ class Article(FivbVis):
         result = self.fivb_vis.get('GetArticle', no, fields, content_type)
         return result
 
-    def getArticleList(self, fields=ARTICLE_DEFAULT_FIELDS, filter=None, tags=None, content_type='xml'):
+    def getArticleList(self, fields=ARTICLE_DEFAULT_FIELDS, filter='', tags='', content_type='xml'):
         result = self.fivb_vis.get_list_with_tags('GetArticleList', fields, filter, tags, content_type)
         return result
 
@@ -21,7 +21,7 @@ class Beach(FivbVis):
         result = self.fivb_vis.get('GetBeachMatch', no, fields, content_type)
         return result
 
-    def getBeachMatchList(self, fields=BEACH_MATCH_LIST_DEFAULT_FIELDS, filter=None, content_type='xml'):
+    def getBeachMatchList(self, fields=BEACH_MATCH_LIST_DEFAULT_FIELDS, filter='', content_type='xml'):
         result = self.fivb_vis.get_list_without_no('GetBeachMatchList', fields, filter, content_type)
         return result
 
@@ -60,6 +60,6 @@ class Volleyball(FivbVis):
         result = self.fivb_vis.get('GetVolleyMatch', no, fields, content_type)
         return result
 
-    def getVolleyMatchList(self, no_tournament, fields=VOLLEY_MATCH_DEFAULT_FIELDS, filter=None, content_type='xml'):
+    def getVolleyMatchList(self, no_tournament, fields=VOLLEY_MATCH_DEFAULT_FIELDS, filter='', content_type='xml'):
         result = self.fivb_vis.get_list('GetVolleyMatchList', no_tournament, fields, filter, content_type)
         return result
