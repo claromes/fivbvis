@@ -1,9 +1,5 @@
 # FIVB VIS Python Client Documentation
 
-The documentation is based on FIVB VIS web service requests. It is simple and includes only requests documented by the FIVB developer team.
-
-[This list contains all available requests via the VIS web service](https://www.fivb.org/VisSDK/VisWebService/#RequestList.html); those with links are documented. Currently, this Python client is read-only.
-
 ## Article
 
 `class` Article()

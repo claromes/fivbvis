@@ -47,7 +47,10 @@ JSON response:
 
 ## Documentation
 
-Check the [docs folder](https://github.com/claromes/fivbvis/blob/main/docs/documentation.md) for detailed information and examples.
+The documentation is based on FIVB VIS web service requests. It is simple and includes only requests documented by the FIVB developer team. Check the [docs folder](https://github.com/claromes/fivbvis/blob/main/docs/documentation.md) for detailed information and examples.
+
+[This list contains all available requests via VIS web service](https://www.fivb.org/VisSDK/VisWebService/#RequestList.html); those with links are documented. Currently, this Python client is read-only.
+
 
 ## Author
 
