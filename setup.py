@@ -31,14 +31,11 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
-        'Intended Audience :: Education',
-        'Intended Audience :: Developers',
+        'Intended Audience :: Other Audience',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Scientific/Engineering',
-        'Topic :: Scientific/Engineering :: Information Analysis',
         'Topic :: Software Development',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities'
