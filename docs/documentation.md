@@ -4,7 +4,7 @@
 
 `class` Article()
 
-- ### getArticle(**`no`**, **`fields`**="No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive", **`content_type`**="xml")
+- ### `getArticle(no, fields, content_type="xml")`
 
     Get an article
 
@@ -13,7 +13,7 @@
     | name           | type     | data type | description                | note                    |
     |----------------|----------|-----------|----------------------------|-------------------------|
     | `no`           | required | int       | Number of the article      |                         |
-    | `fields`       | optional | str       | Fields in the article data | Must be space-separated |
+    | `fields`       | optional | str       | Fields in the article data | Must be space-separated. If it not specified, all the fields you have access to will be sent. |
     | `content_type` | optional | str       | Response content-type      | `xml` or `json`         |
 
     #### Resource
@@ -26,27 +26,51 @@
     from fivbvis import Article
 
     a = Article()
-    print(a.getArticle(no=69213, fields="no source isVideoLive", content_type="json"))
+    a.getArticle(no=69213, fields="no source isVideoLive", content_type="json")
     ```
-- ### getArticleList( **`fields`**="No Category Source SourceCategory TeamCode TournamentCode NoMatch PublishOnHome VideoUri IsVideoLive", **`filter`**, **`tags`**, **`content_type`**="xml")
 
+- ### `getArticleListWithFilter(fields, filter, content_type="xml")`
 
-    Get a list of article
+    Get a list of article filtering with `PressReleasePublishOn` type
 
     #### Parameters
 
     | name           | type     | data type | description                       | note                    |
     |----------------|----------|-----------|-----------------------------------|-------------------------|
     | `fields`       | required | str       | Fields in the article data        | Must be space-separated |
-    | `filter`       | optional | str       | Where the articles were published | Must be space-separated |
-    | `tags`         | optional | str       | Tags in the article data          | Must be space-separated |
+    | `filter`       | optional | str       | Where the articles were published | Must be space-separated. If it is not specified, the response will contain all the articles. |
     | `content_type` | optional | str       | Response content-type             | `xml` or `json`         |
 
     #### Resources
 
     [List of Article Fields](https://www.fivb.org/VisSDK/VisWebService/Article.html)
 
-    [Filters for an article](https://www.fivb.org/VisSDK/VisWebService/PressReleasePublishOn.html)
+    [Filter for an article](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
+
+    #### Example
+
+    ```python
+    from fivbvis import Article
+
+    a = Article()
+    a.getArticleListWithFilter(fields="no Source", filter="PublishOn='Medical'")
+    ```
+
+- ### `getArticleListWithTags(fields, tags, content_type="xml")`
+
+    Get a list of article filtering with `tags`
+
+    #### Parameters
+
+    | name           | type     | data type | description                       | note                    |
+    |----------------|----------|-----------|-----------------------------------|-------------------------|
+    | `fields`       | required | str       | Fields in the article data        | Must be space-separated |
+    | `tags`         | optional | str       | Tags in the article data          | Must be space-separated. If it not specified, all the fields you have access to will be sent.  |
+    | `content_type` | optional | str       | Response content-type             | `xml` or `json`         |
+
+    #### Resources
+
+    [List of Article Fields](https://www.fivb.org/VisSDK/VisWebService/Article.html)
 
     [Tags Filtering examples](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
 
@@ -56,14 +80,14 @@
     from fivbvis import Article
 
     a = Article()
-    print(a.getArticleList(filter="Home", tags="volley-tournament:979"))
+    a.getArticleListWithTags(fields="no Source", tags="#player-profile volley-tournament:979")
     ```
 
 ## Beach `WIP`
 
 `class` Beach()
 
-- ### getBeachMatch(**`no`**, **`fields`**="NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB", **`content_type`**="xml")
+- ### `getBeachMatch(no, fields, content_type="xml")`
 
     Get a beach volleyball match
 
@@ -72,7 +96,7 @@
     | name           | type     | data type | description                               | note                    |
     |----------------|----------|-----------|-------------------------------------------|-------------------------|
     | `no`           | required | int       | Number of the match                       |                         |
-    | `fields`       | optional | str       | Fields in the beach volleyball match data | Must be space-separated |
+    | `fields`       | optional | str       | Fields in the beach volleyball match data | Must be space-separated. If it not specified, all the fields you have access to will be sent. |
     | `content_type` | optional | str       | Response content-type                     | `xml` or `json`         |
 
     #### Resource
@@ -85,10 +109,10 @@
     from fivbvis import Beach
 
     b = Beach()
-    print(b.getBeachMatch(15592))
+    b.getBeachMatch(15592)
     ```
 
-- ### getBeachMatchList(**`fields`**, **`filter`**, **`content_type`**="xml")
+- ### `getBeachMatchList(fields, filter, content_type="xml")`
 
     Get a list of beach volleyball matches
 
@@ -97,7 +121,7 @@
     | name            | type     | data type | description                                | note                    |
     |-----------------|----------|-----------|--------------------------------------------|-------------------------|
     | `fields`        | required | str       | Fields in the beach volleyball match data  | Must be space-separated |
-    | `filter`        | optional | str       | Filters in the beach volleyball match data | Must be space-separated. If it is not specified, the response will contain all the beach volleyball matches |
+    | `filter`        | optional | str       | Filters in the beach volleyball match data | Must be space-separated. If it is not specified, the response will contain all the beach volleyball matches. |
     | `content_type`  | optional | str       | Response content-type                      | `xml` or `json`         |
 
     #### Resources
@@ -112,7 +136,7 @@
     from fivbvis import Beach
 
     b = Beach()
-    print(b.getBeachMatchList(filter='NoTournament="502"'))
+    b.getBeachMatchList(filter="NoTournament='502'")
     ```
 
 - ### `getBeachOlympicSelectionRanking()`
@@ -199,7 +223,7 @@
 
 `class` Volleyball()
 
-- ### getVolleyMatch(**`no`**, **`fields`**="City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName", **`content_type`**="xml")
+- ### `getVolleyMatch(no, fields, content_type="xml")`
 
     Get a volleyball match
 
@@ -208,7 +232,7 @@
     | name           | type     | data type | description                         | note                    |
     |----------------|----------|-----------|-------------------------------------|-------------------------|
     | `no`           | required | int       | Number of the match                 |                         |
-    | `fields`       | optional | str       | Fields in the volleyball match data | Must be space-separated |
+    | `fields`       | optional | str       | Fields in the volleyball match data | Must be space-separated. If it not specified, all the fields you have access to will be sent. |
     | `content_type` | optional | str       | Response content-type               | `xml` or `json`         |
 
     #### Resource
@@ -221,10 +245,10 @@
     from fivbvis import Volleyball
 
     v = Volleyball()
-    print(v.GetVolleyMatch(9211))
+    v.GetVolleyMatch(9211)
     ```
 
-- ### getVolleyMatchList(**`no_tournament`**, **`fields`**="City CountryName DateTimeLocal DurationTotal Hall MatchPointsA MatchPointsB MatchResultText No NoTournament Season TeamAName TeamBName", **`filter`**, **`content_type`**="xml")
+- ### `getVolleyMatchList(fields, filter, content_type="xml")`
 
     Get a list of volleyball matches
 
@@ -232,9 +256,8 @@
 
     | name            | type     | data type | description                          | note                    |
     |-----------------|----------|-----------|--------------------------------------|-------------------------|
-    | `no_tournament` | required | int       | Number of the tournament             |                         |
-    | `fields`        | optional | str       | Fields in the volleyball match data  | Must be space-separated |
-    | `filter`        | optional | str       | Filters in the volleyball match data | Must be space-separated |
+    | `fields`        | required | str       | Fields in the volleyball match data  | Must be space-separated |
+    | `filter`        | optional | str       | Filters in the volleyball match data | Must be space-separated. If it is not specified, the response will contain all the matches. |
     | `content_type`  | optional | str       | Response content-type                | `xml` or `json`         |
 
     #### Resources
@@ -249,12 +272,8 @@
     from fivbvis import Volleyball
 
     v = Volleyball()
-    print(v.getVolleyMatchList(no_tournament=979, filter='FirstDate="2017-7-5" LastDate="2017-7-5"'))
+    v.getVolleyMatchList(fields="No NoInTournament DateTimeLocal DateTimeUtc City Hall MatchPointsA MatchPointsB", filter="FirstDate='2017-10-1' LastDate='2017-10-5'")
     ```
-
-    #### Note
-
-    Requesting all parameters may result in a 404 error
 
 - ### `getVolleyPlayer()`
 

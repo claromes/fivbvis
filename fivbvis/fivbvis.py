@@ -1,5 +1,6 @@
 import httpx
 import json
+import urllib
 
 class FivbVis():
     def __init__(self):
@@ -12,7 +13,7 @@ class FivbVis():
             raise ValueError(f'{content_type}: The provided value is not accepted.')
 
         headers = {'Accept': f'application/{content_type}'}
-        response = httpx.get(url, headers=headers, timeout=10.0)
+        response = httpx.get(url, headers=headers, timeout=20.0)
 
         if content_type == 'xml':
             return response.text
@@ -25,18 +26,16 @@ class FivbVis():
 
         return ''
 
-    def set_filter(self, filter, tags=None):
-        if tags:
-            tags = tags.split()
-            for tag in tags:
-                set_tags = ''.join(f'<Tag>{tag}</Tag>' for tag in tags)
-
-        if filter and not tags:
+    def set_filter(self, filter):
+        if filter:
             return f'<Filter {filter}/>'
-        elif filter and tags:
-            return f"<Filter>{filter} <Tags>{set_tags}</Tags></Filter>"
-        elif tags and not filter:
-            return f'<Filter><Tags>{set_tags}</Tags></Filter>'
+
+        return ''
+
+    def set_tags(self, tags):
+        if tags:
+            tags = urllib.parse.quote(tags)
+            return f'<Filter><Tags>{tags}</Tags></Filter>'
 
         return ''
 
@@ -53,17 +52,9 @@ class FivbVis():
         url = self.base_url + f'<Request Type="{request_type}" {fields}> {filter}</Request>'
         return self.make_request(url, request_type, content_type)
 
-    def get_list_with_tags(self, request_type, fields, filter, tags, content_type='xml'):
+    def get_list_with_tags(self, request_type, fields, tags, content_type='xml'):
         fields = self.set_fields(fields)
-        filter = self.set_filter(filter, tags)
+        tags = self.set_tags(tags)
 
-        url = self.base_url + f'<Request Type="{request_type}" {fields}>{filter}</Request>'
+        url = self.base_url + f'<Request Type="{request_type}" {fields}>{tags}</Request>'
         return self.make_request(url, request_type, content_type)
-
-    def get_list_without_no(self, request_type, fields, filter, content_type='xml'):
-        fields = self.set_fields(fields)
-        filter = self.set_filter(filter)
-
-        url = self.base_url + f'<Request Type="{request_type}" {fields}>{filter}</Request>'
-        return self.make_request(url, request_type, content_type)
-        

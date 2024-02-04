@@ -8,8 +8,12 @@ class Article(FivbVis):
         result = self.fivb_vis.get('GetArticle', no, fields, content_type)
         return result
 
-    def getArticleList(self, fields=None, filter=None, tags=None, content_type='xml'):
-        result = self.fivb_vis.get_list_with_tags('GetArticleList', fields, filter, tags, content_type)
+    def getArticleListWithFilter(self, fields=None, filter=None, content_type='xml'):
+        result = self.fivb_vis.get_list('GetArticleList', fields, filter, content_type)
+        return result
+
+    def getArticleListWithTags(self, fields=None, tags=None, content_type='xml'):
+        result = self.fivb_vis.get_list_with_tags('GetArticleList', fields, tags, content_type)
         return result
 
 class Beach(FivbVis):
@@ -21,7 +25,7 @@ class Beach(FivbVis):
         return result
 
     def getBeachMatchList(self, fields, filter=None, content_type='xml'):
-        result = self.fivb_vis.get_list_without_no('GetBeachMatchList', fields, filter, content_type)
+        result = self.fivb_vis.get_list('GetBeachMatchList', fields, filter, content_type)
         return result
 
     def getBeachOlympicSelectionRanking():
