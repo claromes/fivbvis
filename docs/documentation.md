@@ -88,7 +88,7 @@
     print(b.getBeachMatch(15592))
     ```
 
-- ### getBeachMatchList(**`fields`**="NoInTournament LocalDate LocalTime TeamAType TeamAName TeamBType TeamBName Court MatchPointsA MatchPointsB", **`filter`**, **`content_type`**="xml")
+- ### getBeachMatchList(**`fields`**, **`filter`**, **`content_type`**="xml")
 
     Get a list of beach volleyball matches
 
@@ -96,7 +96,7 @@
 
     | name            | type     | data type | description                                | note                    |
     |-----------------|----------|-----------|--------------------------------------------|-------------------------|
-    | `fields`        | optional | str       | Fields in the beach volleyball match data  | Must be space-separated |
+    | `fields`        | required | str       | Fields in the beach volleyball match data  | Must be space-separated |
     | `filter`        | optional | str       | Filters in the beach volleyball match data | Must be space-separated. If it is not specified, the response will contain all the beach volleyball matches |
     | `content_type`  | optional | str       | Response content-type                      | `xml` or `json`         |
 
