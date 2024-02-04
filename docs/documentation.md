@@ -45,7 +45,7 @@
 
     [List of Article Fields](https://www.fivb.org/VisSDK/VisWebService/Article.html)
 
-    [Filter for an article](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
+    [List of Article Filter](https://www.fivb.org/VisSDK/VisWebService/ArticleFilter.html)
 
     #### Example
 
@@ -72,7 +72,7 @@
 
     [List of Article Fields](https://www.fivb.org/VisSDK/VisWebService/Article.html)
 
-    [Tags Filtering examples](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
+    [Tags Filtering](https://www.fivb.org/VisSDK/VisWebService/TagFiltering.html)
 
     #### Example
 
