@@ -1,28 +1,68 @@
-import requests
-
 from .fivbvis import FivbVis
-from .default_fields import *
 
 class Article(FivbVis):
     def __init__(self):
         self.fivb_vis = FivbVis()
 
-    def getArticle(self, no, fields=ARTICLE_DEFAULT_FIELDS, response_format='xml'):
-        result = self.fivb_vis.get_with_fields('GetArticle', no, fields, response_format)
+    def getArticle(self, no, fields=None, content_type='xml'):
+        result = self.fivb_vis.get('GetArticle', no, fields, content_type)
         return result
 
-    def getArticleList(self, fields=ARTICLE_DEFAULT_FIELDS, filters='', tags='', response_format='xml'):
-        result = self.fivb_vis.get_list_with_tags('GetArticleList', fields, filters, tags, response_format)
+    def getArticleListWithFilter(self, fields=None, filter=None, content_type='xml'):
+        result = self.fivb_vis.get_list('GetArticleList', fields, filter, content_type)
         return result
 
-class VolleyMatch(FivbVis):
+    def getArticleListWithTags(self, fields=None, tags=None, content_type='xml'):
+        result = self.fivb_vis.get_list_with_tags('GetArticleList', fields, tags, content_type)
+        return result
+
+class Beach(FivbVis):
     def __init__(self):
         self.fivb_vis = FivbVis()
 
-    def getMatch(self, no, response_format='xml'):
-        result = self.fivb_vis.get('GetVolleyMatch', no, response_format)
+    def getBeachMatch(self, no, fields=None, content_type='xml'):
+        result = self.fivb_vis.get('GetBeachMatch', no, fields, content_type)
         return result
 
-    def getMatchList(self, no_tournament, fields=VOLLEY_MATCH_LIST_DEFAULT_FIELDS, filters='', response_format='xml'):
-        result = self.fivb_vis.get_list('GetVolleyMatchList', no_tournament, fields, filters, response_format)
+    def getBeachMatchList(self, fields, filter=None, content_type='xml'):
+        result = self.fivb_vis.get_list('GetBeachMatchList', fields, filter, content_type)
+        return result
+
+    def getBeachOlympicSelectionRanking():
+        return
+
+    def getBeachRound():
+        return
+
+    def getBeachRoundList():
+        return
+
+    def getBeachRoundRanking():
+        return
+
+    def getBeachTeam():
+        return
+
+    def getBeachTeamList():
+        return
+
+    def getBeachTournament():
+        return
+
+    def getBeachTournamentRanking():
+        return
+
+    def getBeachWorldTourRanking():
+        return
+        
+class Volleyball(FivbVis):
+    def __init__(self):
+        self.fivb_vis = FivbVis()
+
+    def getVolleyMatch(self, no, fields=None, content_type='xml'):
+        result = self.fivb_vis.get('GetVolleyMatch', no, fields, content_type)
+        return result
+
+    def getVolleyMatchList(self, fields=None, filter=None, content_type='xml'):
+        result = self.fivb_vis.get_list('GetVolleyMatchList', fields, filter, content_type)
         return result
