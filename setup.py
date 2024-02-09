@@ -16,7 +16,7 @@ setup(
     version=version,
     author='Claromes',
     author_email='support@claromes.com',
-    description='Python client library for easy integration with Volleyball Information System (FIVB VIS) Web Service',
+    description='Python client for the Volleyball Information System (FIVB VIS)',
     license='GPLv3',
     long_description=long_description,
     long_description_content_type='text/markdown',
